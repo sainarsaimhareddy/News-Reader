@@ -25,8 +25,7 @@ export default function News() {
           console.log("sai intersecting");
           loadNews();
         }
-      });
-    
+      }); 
       const target = check?.current?.lastElementChild;
       if (target) {
         observer.observe(target);
