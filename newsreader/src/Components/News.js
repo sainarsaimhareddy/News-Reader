@@ -15,6 +15,7 @@ export default function News() {
       catch(error){
   console.log(error);
       }
+      
     }
     useEffect(()=>{
   loadNews();
@@ -43,18 +44,14 @@ export default function News() {
         <div ref={check} className="Container_wrapper">
           {
        news.map((news)=>
-       <div className="Container">
-        <div className="image">
-          <img src={news.image_url} alt={news.title}></img>
-          </div>
-       <div className="content">
-       <h4>{news.title}</h4>
-       <p>{news.description}</p>
-        </div>
-        <div className="readmore">
-          <a href={news.source_url} target="_blank">Read More</a>
-          </div>
-       </div>
+       <div className="card" style={{width:"18rem" ,margin:"10px"}}>
+           <img className="card-img-top" src={news.image_url} alt="Card image cap"></img>
+          <div className="card-body">
+       <h5 className="card-title">{news.title}</h5>
+    <p className="card-text">{news.description}</p>
+    <a href={news.source_url} className="btn btn-primary">Read More</a>
+  </div>
+</div>
        )
           }
         </div>
